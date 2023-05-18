@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block main %}
+<div class="row icon-container result_list" id="subject-list">
+    <div class="col-md-4 col-sm-6 col-12 icon-box d-flex justify-content-center align-items-center">
+        <form action="/single_slit" method="get" name="single_slit_form">
+            <button class="page-button btn btn-primary fas fa-camera-retro" type="submit" name="single_slit_button">Single Slit Interference</button>
+        </form>
+    </div>
+    <div class="col-md-4 col-sm-6 col-12 icon-box d-flex justify-content-center align-items-center">
+        <form action="/double_slit" method="get" name="double_slit_form">
+            <button class="page-button btn btn-primary fas fa-camera-retro" type="submit" name="double_slit_button">Double Slit Interference</button>
+        </form>
+    </div>
+    <div class="col-md-4 col-sm-6 col-12 icon-box d-flex justify-content-center align-items-center">
+        <form action="/subject" method="get" name="subject-form">
+            <button class="page-button btn btn-primary fas fa-camera-retro" type="submit" name="subject">{{subject}}</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
