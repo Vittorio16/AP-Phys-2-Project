@@ -21,13 +21,31 @@ def after_request(response):
 
 @app.route('/', methods=["GET", "POST"])
 def index():
+        return render_template('index.html')
+    
+    
+@app.route('/doubleSlitInterference', methods=["GET", "POST"])
+def doubleSlitInterference():
     if request.method == "POST":
         slitWidth  = request.form['Slit Width']
         slitSep  = request.form['Slit Separation']
         screenDist  = request.form['Screen Distance']
         lightWL  = request.form['Light Wavelength']
         #TODO: ADD COLOR DROPDOWN AND LIGHT WAVELENGTH INTERACTIONS
-        return 
+        return None
 
     else:
-        return render_template('index.html')
+        return render_template('doubleSlitInterference.html')
+    
+
+@app.route('/singleSlitInterference', methods=["GET", "POST"])
+def singleSlitInterference():
+    if request.method == "POST":
+        slitWidth  = request.form['Slit Width']
+        screenDist  = request.form['Screen Distance']
+        lightWL  = request.form['Light Wavelength']
+        #TODO: ADD COLOR DROPDOWN AND LIGHT WAVELENGTH INTERACTIONS
+        return None
+
+    else:
+        return render_template('singleSlitInterference.html')
