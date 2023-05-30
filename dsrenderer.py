@@ -23,8 +23,8 @@ z_list = []
 z_list_positive = []
 z_list_negative = []
 len_positive = []
-for y in np.arange(0, max_y, point_step):
-    for x in np.arange(-max_x, max_x, point_step):
+for y in np.linspace(0, (max_y + point_step), (max_y / point_step)):
+    for x in np.linspace(-max_x, (max_x + point_step), ((2 * max_x) / point_step)):
         length_positive = np.sqrt((y**2) + ((x - x_positive)**2))
         length_negative = np.sqrt((y**2) + ((x - x_negative)**2))
         z_positive = np.sin(2 * π / λ * length_positive) * (h * f / 4 * π * length_positive**2)
