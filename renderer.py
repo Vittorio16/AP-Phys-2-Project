@@ -3,6 +3,14 @@ import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
 
+# Checks if user input is empty
+def check_if_valid(elements):
+    for element in elements:
+        if element == "" or not element.isdigit():
+            print ("false")
+            return False
+    return True
+
 def create_graph(d, max_y, max_x, point_step, wavelength):
     d = 154 * 10**(-6) # slit seperation in m
     max_y = 1.4 # wall distance in m
@@ -44,4 +52,4 @@ def create_graph(d, max_y, max_x, point_step, wavelength):
     ax.set_ylabel('Distance to Wall (meters)')
     ax.set_zlabel('Intensity of Light')
 
-    plt.savefig('static/graph.png')
+    plt.savefig('static/doubleSlitGraph.png')

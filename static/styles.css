@@ -10,6 +10,7 @@
     align-items: center;
     margin: 20px;
     width: 300px; /* set a fixed width */
+    height: -webkit-fill-available;
     text-align: center;
     padding-bottom: 100px;
 }
@@ -17,7 +18,7 @@
 .icon-box i {
     font-size: 50px;
     width: 225px;
-    height: 150px;
+    height: flex;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,5 +47,26 @@
 }
 
 .centered {
+    position: absolute;
+}
+
+.centered-form {
+    margin-top: 70px;
+}
+.better-button{
     text-align: center;
+    background-color: darkcyan;
+    color: white;
+    border-color: darkcyan;
+}
+
+.better-button:hover{
+    background-color: darkcyan;
+    border-color: darkcyan;
+    filter: brightness(90%);
+}
+
+.slit-inputs {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
