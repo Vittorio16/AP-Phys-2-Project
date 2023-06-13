@@ -12,11 +12,11 @@ def check_if_valid(elements):
     return True
 
 def create_graph(d, max_y, max_x, point_step, wavelength):
-    d = 154 * 10**(-6) # slit seperation in m
-    max_y = 1.4 # wall distance in m
-    max_x = 1 # viewpoint width in m
-    point_step = .01 # amount of points between 0 and max
-    wavelength = 632.8 # in nm
+    # d = 154 * 10**(-6) # slit seperation in m
+    # max_y = 1.4 # wall distance in m
+    # max_x = 1 # viewpoint width in m
+    # point_step = .01 # amount of points between 0 and max
+    # wavelength = 632.8 # in nm
     hf = (1.24 * 10**3 / wavelength)
 
 
