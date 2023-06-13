@@ -23,6 +23,7 @@ def create_graph(d, max_y, max_x, point_step, wavelength):
     len_positive = []
 
     for y in np.linspace(.2, (max_y + point_step), int(max_y / point_step)):
+        print ("jdnn")
         for x in np.linspace(-max_x, (max_x + point_step), int((2 * max_x) / point_step)):
             length_positive = np.sqrt(y**2 + (x - x_positive)**2)
             length_negative = np.sqrt(y**2 + (x - x_negative)**2)
@@ -40,4 +41,4 @@ def create_graph(d, max_y, max_x, point_step, wavelength):
 
     surf = ax.plot_trisurf(X, Y, Z, cmap = plt.cm.cividis)
 
-    plt.savefig('foo.png', bbox_inches='tight')
+    plt.savefig('static/graph.png', bbox_inches='tight')

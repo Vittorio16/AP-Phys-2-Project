@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, session
 from flask_session import Session
+from renderer import create_graph
 
 app = Flask(__name__)
 
@@ -37,7 +38,7 @@ def doubleSlitInterference():
         print ("sjicini")
         create_graph(d, max_y, max_x, point_step, wavelength)
         print ("jsdni")
-        return render_template('doubleSlitInterference.html', graph="graph.png")
+        return render_template('doubleSlitInterference.html')
 
     else:
         return render_template('doubleSlitInterference.html')
