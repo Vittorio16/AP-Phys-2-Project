@@ -37,7 +37,11 @@ def create_graph(d, max_y, max_x, point_step, wavelength):
     X, Y, Z = np.array(x_list), np.array(y_list), np.array(z_list)
     fig = plt.figure(figsize = (12,10))
     ax = plt.axes(projection='3d')
-
     surf = ax.plot_trisurf(X, Y, Z, cmap = plt.cm.cividis)
 
-    plt.savefig('static/graph.png', bbox_inches='tight')
+    ax.set_title('Double Slit Interference')
+    ax.set_xlabel('Position on Wall (meters)')
+    ax.set_ylabel('Distance to Wall (meters)')
+    ax.set_zlabel('Intensity of Light')
+
+    plt.savefig('static/graph.png')
