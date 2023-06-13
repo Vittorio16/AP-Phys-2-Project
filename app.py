@@ -35,9 +35,7 @@ def doubleSlitInterference():
         point_step = int(request.form['point_step'])
         wavelength = int(request.form['wavelength'])
         render_template("singleSlitInterference.html")
-        print ("sjicini")
         create_graph(d, max_y, max_x, point_step, wavelength)
-        print ("jsdni")
         return render_template('doubleSlitInterference.html')
 
     else:
