@@ -1,7 +1,5 @@
 from flask import Flask, request, render_template, session
 from flask_session import Session
-from renderer import *
-
 
 app = Flask(__name__)
 
@@ -30,15 +28,16 @@ def index():
 @app.route('/doubleSlitInterference', methods=["GET", "POST"])
 def doubleSlitInterference():
     if request.method == "POST":
-        d  = request.form['d']
-        max_y  = request.form['max_y']
-        max_x  = request.form['max_x']
-        point_step = request.form['point_step']
-        wavelength = request.form['wavelength']
-        
-        create_graph()
-        #TODO: ADD COLOR DROPDOWN AND LIGHT WAVELENGTH INTERACTIONS
-        return None
+        d  = int(request.form['d'])
+        max_y  = int(request.form['max_y'])
+        max_x  = int(request.form['max_x'])
+        point_step = int(request.form['point_step'])
+        wavelength = int(request.form['wavelength'])
+        render_template("singleSlitInterference.html")
+        print ("sjicini")
+        create_graph(d, max_y, max_x, point_step, wavelength)
+        print ("jsdni")
+        return render_template('doubleSlitInterference.html', graph="graph.png")
 
     else:
         return render_template('doubleSlitInterference.html')

@@ -44,3 +44,7 @@
     background-color: darkcyan;
     border-color: darkcyan;
 }
+
+.centered {
+    text-align: center;
+}
