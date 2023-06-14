@@ -2,11 +2,13 @@ import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import matplotlib.pyplot as plt
 from mpl_toolkits import mplot3d
+import re
 
 # Checks if user input is empty
+float_pattern = r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$'
 def check_if_valid(elements):
     for element in elements:
-        if element == "" or not element.isdigit():
+        if element == "" or (not re.match(float_pattern, element) and not element.isnumeric()):
             print ("false")
             return False
     return True
@@ -17,6 +19,11 @@ def create_graph(d, max_y, max_x, point_step, wavelength):
     # max_x = 1 # viewpoint width in m
     # point_step = .01 # amount of points between 0 and max
     # wavelength = 632.8 # in nm
+    d = float(d)
+    max_y = float(max_y)
+    max_x = float(max_x)
+    point_step = float(point_step)
+    wavelength = float(wavelength)
     hf = (1.24 * 10**3 / wavelength)
 
 
