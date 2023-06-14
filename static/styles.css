@@ -59,6 +59,8 @@
     background-color: darkcyan;
     color: white;
     border-color: darkcyan;
+    border: 1px solid;
+    border-radius: .25rem;
 }
 
 .better-button:hover{
