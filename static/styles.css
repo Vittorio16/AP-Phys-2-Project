@@ -52,6 +52,7 @@
 
 .centered-form {
     margin-top: 70px;
+    position: relative;
 }
 .better-button{
     text-align: center;
@@ -69,4 +70,8 @@
 .slit-inputs {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.d-flex {
+    display: inline-block!important;
 }

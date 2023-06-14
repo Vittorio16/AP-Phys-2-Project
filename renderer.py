@@ -9,7 +9,6 @@ float_pattern = r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$'
 def check_if_valid(elements):
     for element in elements:
         if element == "" or (not re.match(float_pattern, element) and not element.isnumeric()):
-            print ("false")
             return False
     return True
 
