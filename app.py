@@ -29,11 +29,11 @@ def index():
 @app.route('/doubleSlitInterference', methods=["GET", "POST"])
 def doubleSlitInterference():
     if request.method == "POST":
-        d  = request.form['d']
-        max_y  = request.form['max_y']
-        max_x  = request.form['max_x']
-        point_step = request.form['point_step']
-        wavelength = request.form['wavelength']
+        d  = request.form['Slit Separation (m)']
+        max_y  = request.form['Screen Distance (m)']
+        max_x  = request.form['Viewport Width (m)']
+        point_step = request.form['Resolution']
+        wavelength = request.form['Wavelength (nm)']
         
         if not check_if_valid([d, max_x, max_y, point_step, wavelength]):
             return render_template("doubleSlitInterference.html", error="Invalid Input", d=d, max_y=max_y, max_x=max_x, point_step=point_step, wavelength=wavelength)
