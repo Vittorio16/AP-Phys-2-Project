@@ -11,11 +11,18 @@ setTimeout(() => {
 }, 6000); // 👈️ time in milliseconds
 
 function displayText() {
+  console.log("loaded")
   isImage = document.getElementById("graph");
   if (isImage == "True") {
-    document.getElementById("input-form").style.display = "none"
+    console.log("hiding");
+    document.getElementById("input-form").style.display = "none";
+    document.getElementById("info-paragraph").style.display = "none";
+
   }
   else {
-    document.getElementById("input-form").style.display = "inline-block"
+    console.log("not hiding");
+    document.getElementById("input-form").style.display = "inline-block";
+    document.getElementById("info-paragraph").style.display = "block";
+
   }
 }

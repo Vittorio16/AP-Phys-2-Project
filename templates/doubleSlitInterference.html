@@ -6,11 +6,11 @@
 
 {% block main %}
     {% if graph %}
-        <div class="centered">
-        <img src="../static/doubleSlitGraph.png" alt="Double Slit Graph">
+        <div class="centered imgbox">
+        <img class="center-fit" src="../static/doubleSlitGraph.png" alt="Double Slit Graph">
         </div>
     {% endif %}
-    <div class="mb-3">
+    <div class="mb-3" id="info-paragraph">
         <p>Note: the model is going to return a graph even if the input numbers are unrealistic</p>
         <p>If your chosen simulation doesn't load, try increasing the resolution number</p>
     </div>
