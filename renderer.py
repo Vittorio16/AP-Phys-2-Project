@@ -38,8 +38,8 @@ def create_graph(d, max_y, max_x, point_step, wavelength):
         for x in np.linspace(-max_x, (max_x + point_step), int((2 * max_x) / point_step)):
             length_positive = np.sqrt(y**2 + (x - x_positive)**2)
             length_negative = np.sqrt(y**2 + (x - x_negative)**2)
-            z_positive = np.sin(2 * np.pi * length_positive / (wavelength * 10**-9)) * ((3 * 10**8) * (4.14 * 10**-15) / (632.8 * 10**-9)) / (4 * np.pi * length_positive**2)
-            z_negative = np.sin(2 * np.pi * length_positive / (wavelength * 10**-9)) * ((3 * 10**8) * (4.14 * 10**-15) / (632.8 * 10**-9)) / (4 * np.pi * length_negative**2)
+            z_positive = np.cos(2 * np.pi * length_positive / (wavelength * 10**-9)) * ((3 * 10**8) * (4.14 * 10**-15) / (632.8 * 10**-9)) / (4 * np.pi * length_positive**2)
+            z_negative = np.cos(2 * np.pi * length_positive / (wavelength * 10**-9)) * ((3 * 10**8) * (4.14 * 10**-15) / (632.8 * 10**-9)) / (4 * np.pi * length_negative**2)
             z = z_positive + z_negative
             x_list.append(x)
             y_list.append(y)
