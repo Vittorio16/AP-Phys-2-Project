@@ -77,3 +77,7 @@
 .d-flex {
     display: inline-block!important;
 }
+
+.hidden {
+    display: none;
+}
