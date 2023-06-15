@@ -23,8 +23,6 @@ def create_graph(d, max_y, max_x, point_step, wavelength):
     max_x = float(max_x)
     point_step = float(point_step)
     wavelength = float(wavelength)
-    hf = (1.24 * 10**3 / wavelength)
-
 
     x_positive = d/2 # positive slit position
     x_negative = 0 - x_positive # negative slit position
@@ -40,9 +38,8 @@ def create_graph(d, max_y, max_x, point_step, wavelength):
         for x in np.linspace(-max_x, (max_x + point_step), int((2 * max_x) / point_step)):
             length_positive = np.sqrt(y**2 + (x - x_positive)**2)
             length_negative = np.sqrt(y**2 + (x - x_negative)**2)
-            sphere =  1 / (4 * np.pi * length_positive**2)
-            z_positive = np.sin(2 * np.pi * length_positive / (wavelength * 10**(-9))) * hf * sphere
-            z_negative = np.sin(2 * np.pi * length_negative / (wavelength * 10**(-9))) * hf * sphere
+            z_positive = np.sin(2 * np.pi * length_positive / (wavelength * 10**-9)) * ((3 * 10**8) * (4.14 * 10**-15) / (632.8 * 10**-9)) / (4 * np.pi * length_positive**2)
+            z_negative = np.sin(2 * np.pi * length_positive / (wavelength * 10**-9)) * ((3 * 10**8) * (4.14 * 10**-15) / (632.8 * 10**-9)) / (4 * np.pi * length_negative**2)
             z = z_positive + z_negative
             x_list.append(x)
             y_list.append(y)
