@@ -18,14 +18,14 @@ def create_graph(d, max_y, max_x, point_step, wavelength):
     # max_x = 1 # viewpoint width in m
     # point_step = .01 # amount of points between 0 and max
     # wavelength = 632.8 # in nm
-    d = float(d)
-    max_y = float(max_y)
+    d = float(d) 
+    max_y = float(max_y) 
     max_x = float(max_x)
     point_step = float(point_step)
     wavelength = float(wavelength)
 
-    x_positive = d/2 # positive slit position
-    x_negative = 0 - x_positive # negative slit position
+    x_positive = (max_x/2) + (d/2) # positive slit position
+    x_negative = (max_x/2) - (d/2) # negative slit position
 
     x_list = []
     y_list = []
@@ -34,12 +34,12 @@ def create_graph(d, max_y, max_x, point_step, wavelength):
     z_list_negative = []
     len_positive = []
 
-    for y in np.linspace(.2, (max_y + point_step), int(max_y / point_step)):
-        for x in np.linspace(-max_x, (max_x + point_step), int((2 * max_x) / point_step)):
+    for y in np.linspace(max_y/10, (max_y + point_step), int(max_y / point_step)):
+        for x in np.linspace(0, (max_x + point_step), int(max_x / point_step)):
             length_positive = np.sqrt(y**2 + (x - x_positive)**2)
             length_negative = np.sqrt(y**2 + (x - x_negative)**2)
-            z_positive = np.cos(2 * np.pi * length_positive / (wavelength * 10**-9)) * ((3 * 10**8) * (4.14 * 10**-15) / (632.8 * 10**-9)) / (4 * np.pi * length_positive**2)
-            z_negative = np.cos(2 * np.pi * length_positive / (wavelength * 10**-9)) * ((3 * 10**8) * (4.14 * 10**-15) / (632.8 * 10**-9)) / (4 * np.pi * length_negative**2)
+            z_positive = np.sin(2 * np.pi * length_positive / (wavelength * 10**-9)) * (1240 / wavelength) / (4 * np.pi * length_positive**2)
+            z_negative = np.sin(2 * np.pi * length_positive / (wavelength * 10**-9)) * (1240 / wavelength) / (4 * np.pi * length_negative**2)
             z = z_positive + z_negative
             x_list.append(x)
             y_list.append(y)
@@ -56,3 +56,5 @@ def create_graph(d, max_y, max_x, point_step, wavelength):
     ax.set_zlabel('Intensity of Light')
 
     plt.savefig('static/doubleSlitGraph.png')
+
+create_graph(0.000154, 1.4, 2, 0.01, 632.8)
