@@ -50,7 +50,6 @@ def create_graph(d, max_y, max_x, point_step, wavelength):
     ax = plt.axes(projection='3d')
     surf = ax.plot_trisurf(X, Y, Z, cmap = plt.cm.cividis)
 
-    ax.set_title('Double Slit Interference')
     ax.set_xlabel('Position on Wall (meters)')
     ax.set_ylabel('Distance to Wall (meters)')
     ax.set_zlabel('Intensity of Light')
