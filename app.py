@@ -36,7 +36,7 @@ def doubleSlitInterference():
         wavelength = request.form['wavelength']
         
         if not check_if_valid([d, max_x, max_y, point_step, wavelength]):
-            return render_template("doubleSlitInterference.html", error="Invalid Input", d=d, max_y=max_y, max_x=max_x, point_step=point_step, wavelength=wavelength)
+            return render_template("doubleSlitInterference.html", d=d, max_y=max_y, max_x=max_x, point_step=point_step, wavelength=wavelength)
 
         create_graph(d, max_y, max_x, point_step, wavelength)
         return render_template('doubleSlitInterference.html', graph="True")
