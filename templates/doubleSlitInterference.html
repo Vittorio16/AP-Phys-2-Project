@@ -11,8 +11,11 @@
         </div>
     {% endif %}
     <div class="mb-3" id="info-paragraph">
-        <p>Note: the model is going to return a graph even if the input numbers are unrealistic</p>
-        <p>If your chosen simulation doesn't load, try increasing the resolution number</p>
+        <p class="spaced-top">If your chosen simulation:
+            <br>Does not load enough data points (ie. the graph is not smooth) -> try decreasing the proximity of data points
+            <br>Does nothing after hitting the create graph button -> enter valid decimal and integer numbers
+            <br>Does an unrealistic simulation based on physics principles -> use plausible values 
+        </p>
     </div>
     <div class="col-md-4 col-sm-6 col-12 icon-box d-flex justify-content-center align-items-center">
         <div class="hidden"><button id="graph" value="{{graph}}"></button></div>
@@ -21,7 +24,7 @@
                 <input autocomplete="off" autofocus class="form-control mx-auto w-auto slit-inputs" id="d" name="d" placeholder="Slit Separation (m)" text-align:"center" type="text" value="{{d}}">
                 <input autocomplete="off" autofocus class="form-control mx-auto w-auto slit-inputs" id="max_y" name="max_y" placeholder="Screen Distance (m)" type="text" value="{{max_y}}">
                 <input autocomplete="off" autofocus class="form-control mx-auto w-auto slit-inputs" id="max_x" name="max_x" placeholder="Viewport Width (m)" type="text" value="{{max_x}}">
-                <input autocomplete="off" autofocus class="form-control mx-auto w-auto slit-inputs" id="point_step" name="point_step" placeholder="Resolution" type="text" value="{{point_step}}">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto slit-inputs" id="point_step" name="point_step" placeholder="Proximity of Data Points" type="text" value="{{point_step}}">
                 <input autocomplete="off" autofocus class="form-control mx-auto w-auto slit-inputs" id="wavelength" name="wavelength" placeholder="Wavelength (nm)" type="text" value="{{wavelength}}">
                 <button class="better-button" type="submit" name="double_slit_button">Create Graph</button>
             </form>

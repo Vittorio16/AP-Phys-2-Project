@@ -98,3 +98,7 @@ main {
     max-height: calc(100vh - 66px);
     margin:auto;
 }
+
+.spaced-top {
+    margin-top:20px;
+}
