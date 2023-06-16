@@ -15,7 +15,7 @@
         <p>If your chosen simulation doesn't load, try increasing the resolution number</p>
     </div>
     <div class="col-md-4 col-sm-6 col-12 icon-box d-flex justify-content-center align-items-center">
-        <div class="hidden"><button id="graph" value={{graph}}></button></div>
+        <div class="hidden"><button id="graph" value="{{graph}}"></button></div>
         <div id="input-form">
             <form action="/doubleSlitInterference" method="post" name="double_slit_form">
                 <input autocomplete="off" autofocus class="form-control mx-auto w-auto slit-inputs" id="d" name="d" placeholder="Slit Separation (m)" text-align:"center" type="text" value="{{d}}">
@@ -27,4 +27,5 @@
             </form>
         </div>
     </div>
+    <script src="../static/script.js"></script>
 {% endblock %}

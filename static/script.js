@@ -11,9 +11,9 @@ setTimeout(() => {
 }, 6000); // 👈️ time in milliseconds
 
 function displayText() {
-  console.log("loaded")
-  isImage = document.getElementById("graph");
-  if (isImage == "True") {
+  let isImage = document.getElementById("graph");
+  console.log(isImage.value);
+  if (isImage.value == "True") {
     console.log("hiding");
     document.getElementById("input-form").style.display = "none";
     document.getElementById("info-paragraph").style.display = "none";
