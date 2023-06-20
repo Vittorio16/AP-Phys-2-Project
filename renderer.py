@@ -38,9 +38,11 @@ def create_graph(d, max_y, max_x, point_step, wavelength):
         for x in np.linspace(0, (max_x + point_step), int(max_x / point_step)):
             length_positive = np.sqrt(y**2 + (x - x_positive)**2)
             length_negative = np.sqrt(y**2 + (x - x_negative)**2)
-            z_positive = np.sin(2 * np.pi * length_positive / (wavelength * 10**-9)) * (1240 / wavelength) / (4 * np.pi * length_positive**2)
-            z_negative = np.sin(2 * np.pi * length_positive / (wavelength * 10**-9)) * (1240 / wavelength) / (4 * np.pi * length_negative**2)
-            z = z_positive + z_negative
+            z_positive = 10*np.sin(2 * np.pi * length_positive / wavelength)
+            z_negative = 10*np.sin(2 * np.pi * length_negative / wavelength)
+            zMultiPos = (1.24 * 10**3 / wavelength) / (4 * np.pi * length_positive**2)
+            zMultiNeg = (1.24 * 10**3 / wavelength) / (4 * np.pi * length_negative**2)
+            z = z_positive * zMultiPos + z_negative * zMultiNeg
             x_list.append(x)
             y_list.append(y)
             z_list.append(z)
@@ -55,5 +57,3 @@ def create_graph(d, max_y, max_x, point_step, wavelength):
     ax.set_zlabel('Intensity of Light')
 
     plt.savefig('static/doubleSlitGraph.png')
-
-create_graph(0.000154, 1.4, 2, 0.01, 632.8)
